@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: emp-postgres
+    restart: always
+    environment:
+      POSTGRES_DB: emp_db
+      POSTGRES_USER: emp_user
+      POSTGRES_PASSWORD: emp_pass
+    ports:
+      - "5432:5432"
+
+  app:
+    image: ppc2001/emp-mgmt-system
+    container_name: emp-app
+    restart: always
+    depends_on:
+      - postgres
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/emp_db
+      SPRING_DATASOURCE_USERNAME: emp_user
+      SPRING_DATASOURCE_PASSWORD: emp_pass
+    ports:
+      - "7070:8080"
