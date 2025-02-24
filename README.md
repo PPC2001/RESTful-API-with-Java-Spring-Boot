@@ -80,22 +80,27 @@ Uses PostgreSQL as the relational database.
 Spring Data JPA simplifies database operations with minimal boilerplate code.
 Uses application.properties for configuring database connection settings.
 
+6️⃣ Pagination & Sorting (Spring Data JPA)
+Implemented pagination and sorting using Pageable in Spring Data JPA.
+Users can request paginated data via query parameters (page, size, sort).
+Improves performance when dealing with large datasets.
 
-6️⃣ Exception Handling
+
+7️⃣ Exception Handling
 Centralized exception handling using @ControllerAdvice.
 Custom exception classes ensure granular error control (e.g., EmployeeNotFoundException).
 Returns structured error responses for better API usability.
 
-7️⃣ Docker & Containerization
+8️⃣ Docker & Containerization
 A Dockerfile is included to package the application as a lightweight container.
 Uses Docker Compose to define multi-container setup (Spring Boot + PostgreSQL).
 This ensures consistent deployment across different environments.
 
-8️⃣ API Documentation (Swagger UI)
+9️⃣ API Documentation (Swagger UI)
 Uses SpringDoc OpenAPI (springdoc-openapi-starter-webmvc-ui) for API documentation.
 Developers can explore API endpoints via Swagger UI (http://localhost:7070/swagger-ui.html).
 
-9️⃣ Testing Strategy
+🔟 Testing Strategy
 Uses JUnit and Mockito for unit and integration testing.
 Mocks dependencies in service layer tests for isolated testing.
 Ensures high code coverage for reliability.
